@@ -14,7 +14,9 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/icon_I4s_icon.ico" />
 
 
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link  href="img/datepicker.css" rel="stylesheet">
+<script src="img/datepicker.js"></script>
 
 
 
@@ -38,7 +40,7 @@
     <section class="hero is-success is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <div class="column is-3	 is-offset-4">
+                <div class="column is-4	 is-offset-4">
                     <div class="box">
 
 
@@ -51,9 +53,11 @@
                         			<?php endforeach; ?>
                         		</div>
                         	<?php endif; ?>
-                        		<div class="field">
-                                <div class="control">
-                                    <input class="input is-medium is-rounded" type="text" placeholder="Name" name="nme">
+
+
+                        		<div class="field is-grouped">
+                                <div class="control is-expanded">
+                                    <input class="input is-medium is-rounded" type="text" placeholder="Name" name="nme" value="<?php echo $nme; ?>">
                                 </div>
                             </div>
 
@@ -85,7 +89,7 @@
 														      <div class="field has-addons">
 														        <p class="control"><a class="button is-static is-rounded is-medium">+880</a></p>
 														        <p class="control is-expanded">
-														          <input class="input is-rounded is-medium" type="tel" placeholder="Phone number" name="phn-nbr">
+														          <input class="input is-rounded is-medium" type="tel" placeholder="Phone number" name="phn-nbr"  value="<?php echo $phoneNumber; ?>">
 														        </p>
 														      </div>
 														    </div>
@@ -93,10 +97,11 @@
 
 														<div class="field">
 														  <div class="control">
-														    <div class="select is-rounded is-medium">
-														      <select>
-														        <option>Male</option>
-														        <option>Female</option>
+														    <div class="select is-rounded is-medium is-fullwidth">
+														      <select name="gender" required>
+														        <option value="" <?php if ($gender == '') echo 'selected'; ?> hidden>Gender</option> 
+														        <option value="male" <?php if ($gender == 'male') echo 'selected'; ?>>Male</option>
+														        <option value="female" <?php if ($gender == 'female') echo 'selected'; ?>>Female</option>
 														      </select>
 														    </div>
 														  </div>
@@ -104,17 +109,18 @@
 
                             <div class="field">
                               <div class="control">
-                 								<input class="input is-medium is-rounded" type="date">
+                              	<!-- <input data-toggle="datepicker"> -->
+
+                 								<input class="input is-medium is-rounded" type="date" name="bday">
+                 								<!-- <input type="text" class="form-control docs-date" name="date" placeholder="Pick a date" autocomplete="off"> -->
                               </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-medium is-rounded" type="text" placeholder="Institution">
+                                    <input class="input is-medium is-rounded" type="text" placeholder="Institution" name="institution">
                                 </div>
                             </div>
-
-
 
                             <button type="submit" name="signup-btn" class="button is-info is-medium is-fullwidth is-outlined is-rounded">Register</button>
                             <p class="msg">Already Registered <a href="#">Login</a></p>
@@ -154,7 +160,7 @@
     </section>
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <script>
     	$('.msg a').click(function(){$('form').animate({height: "toggle",opacity :"toggle"},"slow");});
     </script>
