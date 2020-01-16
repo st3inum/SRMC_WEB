@@ -3,6 +3,7 @@
 session_start();
 require 'config/db.php';
 $Reg_errors = array();
+$Log_errors = array();
 $username="";
 $email="";
 $nme="";
@@ -84,15 +85,9 @@ if(isset($_POST['signup-btn']))
 
 	if(count($Reg_errors)===0)
 	{
-		// $password=password_hash($password,PASSWORD_DEFAULT);
 		$token=bin2hex(random_bytes(50));
 
 		$sql="INSERT INTO userInformation(name,userName,email,token,password,gender,phone,institution) VALUES ('".$nme."','".$username."','".$email."','".$token."','".$password."','".$gender."','".$phoneNumber."','".$institution."')";
-		//$sql="INSERT INTO userInformation(username,email,verified,token,password) VALUES (?,?,?,?,?)";
-		//$stmt= $conn->prepare($sql);
-		//$stmt->bind_param('ssbss',$username,$email,$verified,$token,$password);
-		//if($stmt->execute())
-		echo $sql;
 		if(mysqli_query($conn,$sql))
 		{
 			//login user
@@ -114,4 +109,67 @@ if(isset($_POST['signup-btn']))
 
 	}
 }
+
+
+
+if(isset($_POST['login-btn']))
+{
+	$id=$_POST['userid'];
+	$password=$_POST['passcode'];
+	if(empty($id)){
+		$Log_errors['email']="Email required";
+	}
+	if(empty($password)){
+		$Log_errors['password']="Password required";
+	}
+
+	if(count($Log_errors)===0)
+	{
+		$sql="SELECT * FROM userInformation where email=? LIMIT 1";
+		$stmt=$conn->prepare($sql);
+		$stmt->bind_param('s',$id);
+		$stmt->execute();
+		$result=$stmt->get_result();
+		$user = $result->fetch_assoc();
+		$userCount=$result->num_rows;
+		if($userCount>0 && $password==$user['password'])
+		{
+			// login
+			$_SESSION['id']=$user['userNumber'];
+			$_SESSION['username']=$user['userName'];
+			$_SESSION['email']=$user['email'];
+			$_SESSION['verified']=$user['verified'];
+
+			$_SESSION['message']="You are now logged in";
+			$_SESSION['alert-class']="is-danger";
+			header('location: home.php');
+			exit();
+		}
+		else
+		{
+			$Log_errors['login_fail']="wrong username or password";
+		}
+	}
+}
+
+
+if(isset($_POST['logout-btn']))
+{
+	session_destroy();
+	unset($_SESSION['id']);
+	unset($_SESSION['username']);
+	unset($_SESSION['email']);
+	unset($_SESSION['verified']);
+	unset($_SESSION['message']);
+	unset($_SESSION['alert-class']);
+	header('location: index.php');
+	exit();
+}
+
+
+
+
+
+
+
 ?>

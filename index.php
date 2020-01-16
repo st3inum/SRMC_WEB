@@ -1,4 +1,10 @@
-<?php require_once 'controllers/authController.php' ?>
+<?php require_once 'controllers/authController.php';
+	if(isset($_SESSION['id']))
+	{
+		header('location: home.php');
+		exit();
+	}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -129,10 +135,20 @@
 
 
                         <!-- <form class="login" style="display: none;"> -->
-                        <form class="login">
+                        <form class="login" action="index.php" method="post">
+
+                        	<?php if(count($Log_errors)>0): ?>
+                        		<div class="alert is-danger">
+                        			<?php foreach ($Log_errors as $error):?>
+                        				<li><?php echo $error?></li>
+                        			<?php endforeach; ?>
+                        		</div>
+                        	<?php endif; ?>
+
+
                             <div class="field">
                                 <div class="control has-icons-left">
-                                    <input class="input is-medium is-rounded" type="email" placeholder="Your Email">
+                                    <input class="input is-medium is-rounded" type="email" placeholder="Your Email" name="userid">
                                      <span class="icon is-small is-left">
       																	<i class="fas fa-envelope"></i>
     																	</span>
@@ -140,14 +156,14 @@
                             </div>
                             <div class="field">
                                 <div class="control has-icons-left">
-                                    <input class="input is-medium is-rounded" type="password" placeholder="Your Password">
+                                    <input class="input is-medium is-rounded" type="password" placeholder="Your Password" name="passcode">
                                     <span class="icon is-small is-left">
 																      <i class="fas fa-lock"></i>
 																    </span>
                                 </div>
                             </div>
 
-                            <button class="button is-info is-medium is-fullwidth is-outlined is-rounded">Login</button>
+                            <button class="button is-info is-medium is-fullwidth is-outlined is-rounded" name="login-btn">Login</button>
                             <p class="msg">Not Registered <a href="#">Register</a></p>
                         </form>
 
