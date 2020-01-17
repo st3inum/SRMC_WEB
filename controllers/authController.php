@@ -2,6 +2,7 @@
 
 session_start();
 require 'config/db.php';
+require_once 'emailController.php';
 $Reg_errors = array();
 $Log_errors = array();
 $username="";
@@ -99,6 +100,10 @@ if(isset($_POST['signup-btn']))
 
 			$_SESSION['message']="You are now logged in";
 			$_SESSION['alert-class']="is-danger";
+
+			sendVerificationEmail($email,$token);
+
+
 			header('location: home.php');
 			exit();
 		}
@@ -165,7 +170,6 @@ if(isset($_POST['logout-btn']))
 	header('location: index.php');
 	exit();
 }
-
 
 
 

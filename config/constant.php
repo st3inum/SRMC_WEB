@@ -3,4 +3,13 @@ define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
 define('DB_NAME','SRMC.db');
+
+
+
+// define('MYEMAIL','your email address');
+// define('MYEMAILPASS','password of your email');
+
+
+
+
 ?>

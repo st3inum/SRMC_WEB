@@ -33,6 +33,7 @@
 
 <body>
 		<?php $typeOfPageToHide="register";
+			$is_round='is-rounded';
 			if(count($Reg_errors)!==0)
 			{
 				$typeOfPageToHide="login";
@@ -63,39 +64,39 @@
 
                         		<div class="field is-grouped">
                                 <div class="control is-expanded">
-                                    <input class="input is-medium is-rounded" type="text" placeholder="Name" name="nme" value="<?php echo $nme; ?>">
+                                    <input class="input is-medium <?php echo $is_round; ?>" type="text" placeholder="Name" name="nme" value="<?php echo $nme; ?>">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-medium is-rounded" type="text" placeholder="Username" name="username" value="<?php echo $username; ?>">
+                                    <input class="input is-medium <?php echo $is_round; ?>" type="text" placeholder="Username" name="username" value="<?php echo $username; ?>">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-medium is-rounded" type="email" placeholder="Email" name="email" value="<?php echo $email; ?>">
+                                    <input class="input is-medium <?php echo $is_round; ?>" type="email" placeholder="Email" name="email" value="<?php echo $email; ?>">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-medium is-rounded" type="password" placeholder="Password" name="password">
+                                    <input class="input is-medium <?php echo $is_round; ?>" type="password" placeholder="Password" name="password">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-medium is-rounded" type="password" placeholder="Confirm Password" name="cnf-password">
+                                    <input class="input is-medium <?php echo $is_round; ?>" type="password" placeholder="Confirm Password" name="cnf-password">
                                 </div>
                             </div>
                             <div class="field is-horizontal">
 														    <div class="field is-expanded">
 														      <div class="field has-addons">
-														        <p class="control"><a class="button is-static is-rounded is-medium">+880</a></p>
+														        <p class="control"><a class="button is-static <?php echo $is_round; ?> is-medium">+880</a></p>
 														        <p class="control is-expanded">
-														          <input class="input is-rounded is-medium" type="tel" placeholder="Phone number" name="phn-nbr"  value="<?php echo $phoneNumber; ?>">
+														          <input class="input <?php echo $is_round; ?> is-medium" type="tel" placeholder="Phone number" name="phn-nbr"  value="<?php echo $phoneNumber; ?>">
 														        </p>
 														      </div>
 														    </div>
@@ -103,7 +104,7 @@
 
 														<div class="field">
 														  <div class="control">
-														    <div class="select is-rounded is-medium is-fullwidth">
+														    <div class="select <?php echo $is_round; ?> is-medium is-fullwidth">
 														      <select name="gender" required>
 														        <option value="" <?php if ($gender == '') echo 'selected'; ?> hidden>Gender</option> 
 														        <option value="male" <?php if ($gender == 'male') echo 'selected'; ?>>Male</option>
@@ -117,18 +118,18 @@
                               <div class="control">
                               	<!-- <input data-toggle="datepicker"> -->
 
-                 								<input class="input is-medium is-rounded" type="date" name="bday">
+                 								<input class="input is-medium <?php echo $is_round; ?>" type="date" name="bday">
                  								<!-- <input type="text" class="form-control docs-date" name="date" placeholder="Pick a date" autocomplete="off"> -->
                               </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-medium is-rounded" type="text" placeholder="Institution" name="institution">
+                                    <input class="input is-medium <?php echo $is_round; ?>" type="text" placeholder="Institution" name="institution">
                                 </div>
                             </div>
 
-                            <button type="submit" name="signup-btn" class="button is-info is-medium is-fullwidth is-outlined is-rounded">Register</button>
+                            <button type="submit" name="signup-btn" class="button is-info is-medium is-fullwidth is-outlined <?php echo $is_round; ?>">Register</button>
                             <p class="msg">Already Registered <a href="#">Login</a></p>
                         </form>
 
@@ -148,7 +149,7 @@
 
                             <div class="field">
                                 <div class="control has-icons-left">
-                                    <input class="input is-medium is-rounded" type="email" placeholder="Your Email" name="userid">
+                                    <input class="input is-medium <?php echo $is_round; ?>" type="email" placeholder="Your Email" name="userid">
                                      <span class="icon is-small is-left">
       																	<i class="fas fa-envelope"></i>
     																	</span>
@@ -156,14 +157,14 @@
                             </div>
                             <div class="field">
                                 <div class="control has-icons-left">
-                                    <input class="input is-medium is-rounded" type="password" placeholder="Your Password" name="passcode">
+                                    <input class="input is-medium <?php echo $is_round; ?>" type="password" placeholder="Your Password" name="passcode">
                                     <span class="icon is-small is-left">
 																      <i class="fas fa-lock"></i>
 																    </span>
                                 </div>
                             </div>
 
-                            <button class="button is-info is-medium is-fullwidth is-outlined is-rounded" name="login-btn">Login</button>
+                            <button class="button is-info is-medium is-fullwidth is-outlined <?php echo $is_round; ?>" name="login-btn">Login</button>
                             <p class="msg">Not Registered <a href="#">Register</a></p>
                         </form>
 
