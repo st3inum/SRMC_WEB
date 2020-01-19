@@ -1,4 +1,5 @@
 <?php 
+	error_reporting(0);
 	require_once 'controllers/authController.php' ;
 	require_once 'controllers/problemController.php' ;
 	if(!isset($_SESSION['id']))
@@ -23,6 +24,7 @@
 <head>
 		<title>Add Problem</title>
     <?php echo $defaultHead; ?>
+    <?php echo $refresh; ?>
 </head>
 
 <body>
@@ -85,7 +87,7 @@
 				</form>
 			</div>
   </section>
-    
+  
 </body>
 
 </html>

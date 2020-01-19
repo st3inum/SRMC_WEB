@@ -1,5 +1,5 @@
 <?php 
-
+error_reporting(0);
 session_start();
 require_once 'config/db.php';
 require_once 'emailController.php';
@@ -97,8 +97,6 @@ if(isset($_POST['signup-btn']))
 			$_SESSION['username']=$username;
 			$_SESSION['email']=$email;
 			$_SESSION['verified']=0;
-			$_SESSION['message']="You are now logged in";
-			$_SESSION['alert-class']="is-danger";
 			$_SESSION['type']="solver";
 			$_SESSION['name']=$nme;
 
@@ -147,8 +145,6 @@ if(isset($_POST['login-btn']))
 			$_SESSION['verified']=$user['verified'];
 			$_SESSION['type']=$user['userType'];
 			$_SESSION['name']=$user['name'];
-			$_SESSION['message']="You are now logged in";
-			$_SESSION['alert-class']="is-danger";
 			header('location: home.php');
 			exit();
 		}
@@ -167,10 +163,8 @@ if(isset($_POST['logout-btn']))
 	unset($_SESSION['username']);
 	unset($_SESSION['email']);
 	unset($_SESSION['verified']);
-	unset($_SESSION['message']);
 	unset($_SESSION['type']);
 	unset($_SESSION['name']);
-	unset($_SESSION['alert-class']);
 	header('location: index.php');
 	exit();
 }

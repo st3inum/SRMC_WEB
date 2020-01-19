@@ -1,4 +1,6 @@
-<?php require_once 'controllers/authController.php' ;
+<?php 
+	error_reporting(0);
+	require_once 'controllers/authController.php' ;
 	if(!isset($_SESSION['id']))
 	{
 		header('location: index.php');
@@ -9,26 +11,9 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>verification</title>
-		<link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
-		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-        <!-- <link rel="stylesheet" href="styles/debug.css"> -->
-		<link rel="stylesheet" href="img/style.css">
-		<link rel="shortcut icon" type="image/x-icon" href="img/icon_I4s_icon.ico" />
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<link  href="img/datepicker.css" rel="stylesheet">
-<script src="img/datepicker.js"></script>
-
-
-
-
-
-
+    <?php echo $defaultHead; ?>
+    <?php echo $refresh; ?>
 </head>
 
 <body>

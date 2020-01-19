@@ -1,4 +1,10 @@
 <?php 
+error_reporting(0);
+if(!isset($_SESSION['id']) || $_SESSION['type']=='solver')
+{
+	header('location: ../index.php');
+	exit();
+}
 require 'config/db.php';
 $pnme="";
 $pans="";
@@ -29,10 +35,8 @@ if(isset($_POST['submit-btn']))
 		}
 		else
 		{
-			{
-				header('location: errors.php');
-				exit();;
-			}
+			header('location: errors.php');
+			exit();
 		}
 	}
 

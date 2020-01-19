@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
 	if(isset($_SESSION['name']))
 	$navBar='<nav class="navbar is-link" role="navigation" aria-label="main navigation" style="box-shadow: 0 0px 0 0;background-color: #043584; ">
 				    <div class="navbar-brand">
@@ -51,6 +52,17 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/icon_I4s_icon.ico" />
 		<script id="MathJax-script" async src="src/tex-chtml.js"></script> <!-- mathjax -->
 		<script defer src="src/all.js"></script><!-- font awesome -->
-    <script src="src/jquery-3.4.1.min.js"></script><!-- jquery -->'
+    <script src="src/jquery-3.4.1.min.js"></script><!-- jquery -->';
+
+
+
+    $refresh = '<script>
+			$(document).ready(function(){
+			  setInterval(function(){
+					$("#refresh").load("refreshController.php");
+				},2000);
+			});	
+		</script>
+		<div id=refresh></div>';
 
 ?>

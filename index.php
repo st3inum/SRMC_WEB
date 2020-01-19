@@ -1,4 +1,6 @@
-<?php require_once 'controllers/authController.php';
+<?php 
+    error_reporting(0);
+    require_once 'controllers/authController.php';
 	if(isset($_SESSION['id']))
 	{
 		header('location: home.php');

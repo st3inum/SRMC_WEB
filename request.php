@@ -1,4 +1,5 @@
-<?php require_once 'controllers/authController.php' ;
+<?php error_reporting(0);
+	require_once 'controllers/authController.php' ;
 	if(!isset($_SESSION['id']))
 	{
 		header('location: index.php');
@@ -21,6 +22,13 @@
 <head>
     <title>Request</title>
     <?php echo $defaultHead ;?>
+		<script>
+			$(document).ready(function(){
+			  setInterval(function(){
+					$("#refresh-container").load("reloadRequestPage.php");
+				},2000);
+			});	
+		</script>
 </head>
 
 <body>
@@ -29,7 +37,7 @@
     <section class="hero is-success is-fullheight">
 
         <div class="hero-body ">
-	        	<div class="container has-text-centered">
+	        	<div class="container has-text-centered" id="refresh-container">
 				      	<!-- This is Request page -->
 				      	<?php 
 				      		$sql="SELECT * FROM setterRequest";
@@ -65,7 +73,6 @@
 					      				</div>
 				      				</div>
 				      				<!-- user description end -->
-
 				      			<?php
 				      			}
 				      		}else
@@ -75,8 +82,10 @@
 
 				      	?>
 						</div>
+				      	<!-- <button class="button is-link is-medium is-inverted is-rounded ">Refresh</button> -->
         </div>
     </section>
 	
 </body>
+		<?php echo $refresh; ?>
 </html>

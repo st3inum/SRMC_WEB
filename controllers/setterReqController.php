@@ -1,8 +1,6 @@
-<?php 
-session_start();
-	require '../config/db.php';
-	// require 'authController.php';
-	// echo $_SESSION['id'];
+<?php
+	error_reporting(0); 
+	session_start();
 	if(!isset($_SESSION['id']))
 	{
 		header('location: ../index.php');
@@ -18,6 +16,9 @@ session_start();
 		header('location: ../add.php');
 		exit();
 	}
+	require '../config/db.php';
+	// require 'authController.php';
+	// echo $_SESSION['id'];
 
 
 	$id=$_GET['id'];

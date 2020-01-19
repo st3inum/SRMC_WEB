@@ -1,4 +1,6 @@
-<?php require_once 'controllers/authController.php' ;
+<?php 
+	error_reporting(0);
+	require_once 'controllers/authController.php' ;
 	if(!isset($_SESSION['id']))
 	{
 		header('location: index.php');
@@ -21,6 +23,7 @@
 <head>
 		<title>home</title>
     <?php echo $defaultHead; ?>
+   	<?php echo $refresh; ?>
 </head>
 
 <body>
@@ -31,21 +34,22 @@
         <div class="hero-body ">
 	        	<div class="container has-text-centered">
 				      	<form class="home" action="home.php" method="post">
-				      		<?php 
-				      			$in_list_of_request = "SELECT * FROM setterRequest WHERE userNumber=".$_SESSION['id'];
-										if((mysqli_num_rows(mysqli_query($conn,$in_list_of_request))>0))
-										{
-											echo '<button class="button is-primary is-light is-inverted" disabled>You have Requested</button>';
-										}
-										else
-										{
-											echo '<button type="submit" class="button is-primary is-light" name="request-btn">Become a problem setter</button>';
-										}	
-				      		?>
+				      		<div>
+				      			<?php 
+					      			$in_list_of_request = "SELECT * FROM setterRequest WHERE userNumber=".$_SESSION['id'];
+											if((mysqli_num_rows(mysqli_query($conn,$in_list_of_request))>0))
+											{
+												echo '<button class="button is-primary is-light is-inverted" disabled>You have Requested</button>';
+											}
+											else
+											{
+												echo '<button type="submit" class="button is-primary is-light" name="request-btn">Become a problem setter</button>';
+											}	
+					      		?>
+				      		</div>
 			          </form>
 						</div>
         </div>
     </section>
-    
 </body>
 </html>
