@@ -50,8 +50,8 @@
 				      				}
 				      				?>
 				      				<!-- user description -->
-				      				<div class="column is-4	 is-offset-2">
-					      				<div class="box" style="text-align: left !important;width: 800px; display: flex;justify-content: space-between;">
+				      				<div class="column is-6	 is-offset-2">
+					      				<div class="box" style="text-align: left !important; display: flex;justify-content: space-between;">
 					      					<p style="display: inline-flex;flex-direction: column;">
 					      						<b>ID: <?php echo $user['userNumber'] ?></b>
 					      						<b>Name: <?php echo $user['name'] ?></b>
