@@ -30,7 +30,7 @@
 	
 <!-- style="align-content: space-between;align-items: center;" -->
     <section class="hero is-success is-fullheight">
-				<?php echo $navBar; ?>
+				<?php showNav($_SESSION['type']); ?>
         <div class="hero-body ">
 	        	<div class="container has-text-centered">
 				      	<form class="home" action="home.php" method="post">

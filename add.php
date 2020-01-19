@@ -36,12 +36,13 @@
 	};
 	</script>
   <section class="hero is-success has-addons-fullwidth">
-			<?php echo $navBar; ?>
+			<?php showNav($_SESSION['type']); ?>
+			
 			<div class="hero-body ">
 				<form action="add.php" method="post" >
 				    <div class="columns is-fullwidth">
 				        <div class="column">
-				            <textarea  class="textarea" placeholder="Problem Description" rows="10" name="prevw"><?php echo $prevw;?></textarea>
+				            <textarea  class="textarea" placeholder="Problem Description" rows="8" name="prevw"><?php echo $prevw;?></textarea>
 				        </div>
 				        <div class="column has-text-centered" style="flex-wrap: wrap;">
 				            <div class="field is-grouped">
