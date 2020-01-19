@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-require 'config/db.php';
+require_once 'config/db.php';
 require_once 'emailController.php';
 $Reg_errors = array();
 $Log_errors = array();

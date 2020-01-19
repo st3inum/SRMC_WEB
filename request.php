@@ -52,8 +52,8 @@
 				      				<!-- user description -->
 				      				<form>
 				      					<h2><?php echo $user['name'] ?></h2>
-					      				<button type="submit" name="accept-btn" class="button is-success is-outlined " style="width: 70px;height: 70px;border-radius: 35px;border-width: 4px;"><i class="fas fa-check fa-3x"></i></button>
-					      				<button type="submit" name="reject-btn" class="button is-danger is-outlined " style="width: 70px;height: 70px;border-radius: 35px;border-width: 4px;"><i class="fas fa-times fa-3x"></i></button>
+					      				<a type="submit" href="controllers/setterReqController.php?id=<?php echo $user['userNumber']; ?>&type=1" class="button is-success is-outlined " style="width: 70px;height: 70px;border-radius: 35px;border-width: 4px;"><i class="fas fa-check fa-3x"></i></a>
+					      				<a type="submit" href="controllers/setterReqController.php?id=<?php echo $user['userNumber']; ?>&type=0" class="button is-danger is-outlined " style="width: 70px;height: 70px;border-radius: 35px;border-width: 4px;"><i class="fas fa-times fa-3x"></i></a>
 				      				</form>
 				      				<!-- user description end -->
 
