@@ -20,14 +20,15 @@ function verifyUser($token)
 		$update_query="UPDATE userInformation SET verified=1 WHERE token='$token'";
 		if(mysqli_query($conn,$update_query))
 		{
-			//successfull
-			;
+			if(!isset($_SESSION['id']))
+			{
+				$_SESSION['verified']=1;
+			}
 		}
 		else
 		{
-			//error page
-			// echo "error";
-			;
+			header('location: ../errors.php');
+			exit();
 		}
 	}
 	header('location: ../index.php');

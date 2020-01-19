@@ -97,9 +97,10 @@ if(isset($_POST['signup-btn']))
 			$_SESSION['username']=$username;
 			$_SESSION['email']=$email;
 			$_SESSION['verified']=0;
-
 			$_SESSION['message']="You are now logged in";
 			$_SESSION['alert-class']="is-danger";
+			$_SESSION['type']="solver";
+			$_SESSION['name']=$nme;
 
 			sendVerificationEmail($email,$token);
 
@@ -144,7 +145,8 @@ if(isset($_POST['login-btn']))
 			$_SESSION['username']=$user['userName'];
 			$_SESSION['email']=$user['email'];
 			$_SESSION['verified']=$user['verified'];
-
+			$_SESSION['type']=$user['userType'];
+			$_SESSION['name']=$user['name'];
 			$_SESSION['message']="You are now logged in";
 			$_SESSION['alert-class']="is-danger";
 			header('location: home.php');
@@ -166,12 +168,27 @@ if(isset($_POST['logout-btn']))
 	unset($_SESSION['email']);
 	unset($_SESSION['verified']);
 	unset($_SESSION['message']);
+	unset($_SESSION['type']);
+	unset($_SESSION['name']);
 	unset($_SESSION['alert-class']);
 	header('location: index.php');
 	exit();
 }
 
-
+if(isset($_POST['request-btn']))
+{
+	$sql="INSERT INTO setterRequest(userNumber) VALUES ('".$_SESSION['id']."')";
+	if(mysqli_query($conn,$sql))
+	{
+		header('location: home.php');
+		exit();
+	}
+	else
+	{
+		header('location: errors.php');
+		exit();
+	}
+}
 
 
 

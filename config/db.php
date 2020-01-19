@@ -1,6 +1,7 @@
 <?php
 
-require 'constant.php';
+require_once 'constant.php';
+require_once 'commonVariables.php';
 
 $conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 

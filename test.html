@@ -1,128 +1,20 @@
-<!-- <!DOCTYPE html>
 <html>
+
 <head>
-	<title>hello</title>
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<script type="text/javascript" id="MathJax-script" async
-	  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-	</script>
-</head>
-<body>
-<textarea id="textcontent" placeholder="Type Text..." rows="12" cols="50"></textarea>
-<div style="width: 380px;" id="showtext"></div>
-<script type="text/javascript">
-	var textcontent = document.getElementById('textcontent');
-	textcontent.onkeyup = textcontent.onkeypress = function(){
-    	document.getElementById('showtext').innerHTML = this.value;
-  	}
-</script>
-
-When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-</body>
-</html> -->
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta charset="UTF-8">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta http-equiv="content-language" content="en">
-
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <script src="node_modules/latex.js/dist/latex.min.js"></script> 
-  <script src="https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/latex.min.js"></script>
-
-  <title>LaTeX.js API Test</title>
+    <link type="text/css" rel="stylesheet" href="preview_style.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+    function preview() {
+        $("#preview_div").html($("#text").val());
+    }
+    </script>
 </head>
 
 <body>
-  <h1>Compiling LaTeX</h1>
-  <textarea id="textcontent" placeholder="Type Text..." rows="12" cols="50"></textarea>
-<div style="width: 380px;" id="showtext"></div>
-  <script>
-    // or ES Modules
-    // import latexjs from "https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/latex.esm.js"
-    var textcontent = document.getElementById('textcontent');
-	textcontent.onkeyup = textcontent.onkeypress = function(){
-    	// document.getElementById('showtext').innerHTML = this.value;
-    	var generator = new latexjs.HtmlGenerator({ hyphenate: false })
-
-    	generator = latexjs.parse(textcontent, { generator: generator })
-
-    // document.body.appendChild(generator.stylesAndScripts("https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/"))
-    // document.body.appendChild(generator.domFragment())
-    	document.getElementById('showtext').innerHTML = this.value;
-
-  	}
-    // var generator = new latexjs.HtmlGenerator({ hyphenate: false })
-
-    // generator = latexjs.parse(text, { generator: generator })
-
-    // document.body.appendChild(generator.stylesAndScripts("https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/"))
-    // document.body.appendChild(generator.domFragment())
-  </script>
+    <div id="wrapper">
+        <textarea id="text" onkeyup="preview();" placeholder="Enter Text Or Code"></textarea>
+        <div id="preview_div"></div>
+    </div>
 </body>
 
-</html> -->
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>hello</title>
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<script type="text/javascript" id="MathJax-script" async
-	  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/latex.min.js"></script>
-</head>
-<body>
-
-
-<textarea id="textcontent" placeholder="Type Text..." rows="12" cols="50"></textarea>
-
-
-<form> 
-  <input type="button" value="Start machine">
-</form>
-<script type="text/javascript">
-	const button = document.querySelector('input');
-
-
-
-button.addEventListener('click', updateButton);
-
-function updateButton() {
-  if (button.value === 'Start machine') {
-    const temp = document.getElementById('textcontent').value;
-    var generator = new latexjs.HtmlGenerator({ hyphenate: false })
-
-    generator = latexjs.parse(temp, { generator: generator })
-
-    document.body.appendChild(generator.stylesAndScripts("https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/"))
-    document.body.appendChild(generator.domFragment())
-  }
-}
-</script>
-<!-- 
-<script>
-	
-	var text = "Hi, this is a line of text."
-
-    var generator = new latexjs.HtmlGenerator({ hyphenate: false })
-
-    generator = latexjs.parse(text, { generator: generator })
-
-    document.body.appendChild(generator.stylesAndScripts("https://cdn.jsdelivr.net/npm/latex.js@0.11.1/dist/"))
-    document.body.appendChild(generator.domFragment())
-
-</script>
- -->
-</body>
 </html>
