@@ -23,8 +23,8 @@ error_reporting(0);
 				    <div  class="navbar-menu" style="background-color: transparent;">
 				        <div class="navbar-start">
 
-				            <a class="navbar-item" href="request.php">Requests</a>
-				            <a class="navbar-item" href="add.php">Create problem</a>
+				            <a class="navbar-item" href="request.php" style="font-size: 20px;">Requests</a>
+				            <a class="navbar-item" href="add.php" style="font-size: 20px;">Create problem</a>
 				        </div>
 
 				        <div class="navbar-end">
@@ -69,12 +69,12 @@ error_reporting(0);
 			$temp=$navBar;
 			if($user=='solver')
 			{
-				$temp=str_replace('<a class="navbar-item" href="request.php">Requests</a>', ' ', $temp);
-				$temp=str_replace('<a class="navbar-item" href="add.php">Create problem</a>', ' ', $temp);
+				$temp=str_replace('<a class="navbar-item" href="request.php" style="font-size: 20px;">Requests</a>', ' ', $temp);
+				$temp=str_replace('<a class="navbar-item" href="add.php" style="font-size: 20px;">Create problem</a>', ' ', $temp);
 			}
 			if($user=='setter')
 			{
-				$temp=str_replace('<a class="navbar-item" href="request.php">Requests</a>', ' ', $temp);
+				$temp=str_replace('<a class="navbar-item" href="request.php" style="font-size: 20px;">Requests</a>', ' ', $temp);
 			}
 			echo $temp;
 		}
