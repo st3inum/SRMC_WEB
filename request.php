@@ -50,11 +50,20 @@
 				      				}
 				      				?>
 				      				<!-- user description -->
-				      				<form>
-				      					<h2><?php echo $user['name'] ?></h2>
-					      				<a type="submit" href="controllers/setterReqController.php?id=<?php echo $user['userNumber']; ?>&type=1" class="button is-success is-outlined " style="width: 70px;height: 70px;border-radius: 35px;border-width: 4px;"><i class="fas fa-check fa-3x"></i></a>
-					      				<a type="submit" href="controllers/setterReqController.php?id=<?php echo $user['userNumber']; ?>&type=0" class="button is-danger is-outlined " style="width: 70px;height: 70px;border-radius: 35px;border-width: 4px;"><i class="fas fa-times fa-3x"></i></a>
-				      				</form>
+				      				<div class="column is-4	 is-offset-2">
+					      				<div class="box" style="text-align: left !important;width: 800px; display: flex;justify-content: space-between;">
+					      					<p style="display: inline-flex;flex-direction: column;">
+					      						<b>ID: <?php echo $user['userNumber'] ?></b>
+					      						<b>Name: <?php echo $user['name'] ?></b>
+					      						<b>Email: <?php echo $user['email'] ?></b>
+					      						<b>Institution: <?php echo $user['institution'] ?></b>
+					      					</p>
+					      					<div>
+					      						<a type="submit" href="controllers/setterReqController.php?id=<?php echo $user['userNumber']; ?>&type=1" class="button is-success is-outlined " style="width: 70px;height: 70px;border-radius: 35px;border-width: 4px;"><i class="fas fa-check fa-3x"></i></a>
+					      					<a type="submit" href="controllers/setterReqController.php?id=<?php echo $user['userNumber']; ?>&type=0" class="button is-danger is-outlined " style="width: 70px;height: 70px;border-radius: 35px;border-width: 4px;"><i class="fas fa-times fa-3x"></i></a>
+					      					</div>
+					      				</div>
+				      				</div>
 				      				<!-- user description end -->
 
 				      			<?php
