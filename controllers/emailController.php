@@ -15,7 +15,6 @@ $mailer = new Swift_Mailer($transport);
 
 function sendVerificationEmail($to,$token)
 {
-	echo $token;
 	global $mailer;
 	$llink = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] 
                 === 'on' ? "https" : "http") . "://" . 

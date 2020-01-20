@@ -5,7 +5,6 @@ require '../config/db.php';
 if(isset($_GET['token']))
 {
 	$token=$_GET['token'];
-	// echo $token;
 	verifyUser($token);
 }
 
