@@ -18,7 +18,7 @@ function sendVerificationEmail($to,$token)
 	global $mailer;
 	$llink = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] 
                 === 'on' ? "https" : "http") . "://" . 
-          $_SERVER['HTTP_HOST'] . $VERIFYLOC; 
+          $_SERVER['HTTP_HOST'] . VERIFYLOC; 
 
 	$body='<!DOCTYPE html>
 	<html>
