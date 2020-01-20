@@ -30,7 +30,7 @@ error_reporting(0);
 				        <div class="navbar-end">
 				        		<div class="navbar-item">
 				        			<font style="font-family: \'Sigmar One\', cursive; font-size: 30px;" >
-				        				'.$_SESSION['type'].'
+				        				'.$_SESSION['name'].'
 				               </font>
 				            </div>
 				            <div class="navbar-item">

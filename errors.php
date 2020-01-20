@@ -28,6 +28,16 @@ background-attachment: fixed;
         $temp=$navBar;
         $temp=str_replace('is-link', 'is-success', $temp);
         $temp=str_replace('background-color: #043584;', 'background-color: #236d02;', $temp);
+        if($_SESSION['type']=='solver')
+        {
+            $temp=str_replace('<a class="navbar-item" href="request.php" style="font-size: 20px;">Requests</a>', ' ', $temp);
+            $temp=str_replace('<a class="navbar-item" href="add.php" style="font-size: 20px;">Create problem</a>', ' ', $temp);
+
+        }
+        if($_SESSION['type']=='setter')
+        {
+            $temp=str_replace('<a class="navbar-item" href="request.php" style="font-size: 20px;">Requests</a>', ' ', $temp);
+        }
         echo $temp; 
     ?>
     <section class="hero is-success is-fullheight">

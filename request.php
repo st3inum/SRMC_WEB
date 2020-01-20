@@ -33,7 +33,7 @@
 
 <body>
 
-		<?php //echo $navBar; ?>
+		<?php showNav($_SESSION['type']); ?>
     <section class="hero is-success is-fullheight">
 
         <div class="hero-body ">
