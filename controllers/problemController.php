@@ -26,7 +26,7 @@ if(isset($_POST['submit-btn']))
 	$tags=$_POST['tags'];
 
 	if(!(empty($prevw) || empty($pnme) || empty($pans) || empty($tags))){
-		$sql="INSERT INTO problemAndSolution(title,problem,solution,tag,setter) VALUES ('".$pnme."','".$prevw."','".$pans."','".$tags."','".$_SESSION['id']."')";
+		$sql="INSERT INTO problemAndSolution(title,problem,solution,tag,setter) VALUES ('".$pnme."','".str_replace('\\','\\\\',str_replace('\\\\','\\',$prevw))."','".$pans."','".$tags."','".$_SESSION['id']."')";
 		// echo $sql;	
 		if(mysqli_query($conn,$sql))
 		{
