@@ -46,7 +46,7 @@ error_reporting(0);
 		<link rel="stylesheet" href="img/style.css"> <!-- style.css for hero -->
 		<link rel="stylesheet" href="src/bulma.min.css"> <!-- bulma -->
 		<link rel="shortcut icon" type="image/x-icon" href="img/icon_I4s_icon.ico" />
-		<script id="MathJax-script" async src="src/tex-chtml.js"></script> <!-- mathjax -->
+		<script id="MathJax-script" async src="MathJax-3.0.0/es5/latest.js?config=TeX-AMS_HTML"></script> <!-- mathjax -->
 		<script defer src="src/all.js"></script><!-- font awesome -->
     <script src="src/jquery-3.4.1.min.js"></script><!-- jquery -->
     <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet"><!-- Sigmar One G-Font -->';
