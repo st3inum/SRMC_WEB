@@ -9,10 +9,9 @@ require 'config/db.php';
 $pnme="";
 $pans="";
 $tags="";
-$prevw="";
 if(isset($_POST['preview-btn']))
 {
-	$prevw=$_POST['prevw'];
+	$prevw=$_POST['editor'];
 	$pnme=$_POST['pnme'];
 	$pans=$_POST['pans'];
 	$tags=$_POST['tags'];
@@ -20,7 +19,7 @@ if(isset($_POST['preview-btn']))
 
 if(isset($_POST['submit-btn']))
 {
-	$prevw=$_POST['prevw'];
+	$prevw=$_POST['editor'];
 	$pnme=$_POST['pnme'];
 	$pans=$_POST['pans'];
 	$tags=$_POST['tags'];
